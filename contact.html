@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ian Kleinfeld, Health Information Technologist, Data Analyst, UX/UI Designer</title>
+    <link rel="stylesheet" href="https://use.typekit.net/ehs7hdf.css">
+
+    <link rel="stylesheet" href="styles/styles.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init({
+              publicKey: "-4ilvWRZ7KKeZiJ58",
+            });
+        })();
+
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                // Show sending state
+                const button = this.querySelector('button');
+                const originalText = button.textContent;
+                button.textContent = 'Sending...';
+                button.disabled = true;
+
+                emailjs.sendForm('service_d4cucsw', 'template_295lo2w', this)
+                    .then((response) => {
+                        console.log('SUCCESS!', response);
+                        alert('Message sent successfully!');
+                        this.reset();
+                        button.textContent = originalText;
+                        button.disabled = false;
+                    }, (error) => {
+                        console.error('FAILED...', error);
+                        if (error.text) {
+                            console.error('Error details:', error.text);
+                        }
+                        alert('Failed to send message. Please try again.');
+                        console.log('EmailJS Error:', error);
+                        button.textContent = originalText;
+                        button.disabled = false;
+                    });
+            });
+          
+        }
+    </script>
+</head>
+<body>
+<main>
+    <header>
+<img src="img/ianformatics-header.jpg" alt="Ian Kleinfeld, Health Information Technologist, Data Analyst, UX/UI Designer">
+    </header>
+    <form id="contact-form">
+        <input type="hidden" name="contact_number">
+        <label>Name</label>
+        <input type="text" name="from_name" required>
+        <label>Email</label>
+        <input type="email" name="from_email" required>
+        <label>Message</label>
+        <textarea name="message" rows="5" required></textarea>
+        <button type="submit">Send</button>
+    </form>
+    <footer></footer>
+</main>
+</body>
+</html>

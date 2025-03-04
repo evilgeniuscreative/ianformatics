@@ -130,6 +130,10 @@ footer {
 }
 
 @media screen and (max-width: 1000px) {
+  nav {
+    top: 16px;
+    width: 100%;
+  }
   main article {
     margin: 30px auto;
     padding: 10px;
@@ -138,11 +142,8 @@ footer {
   main article div {
     max-width: 95%;
   }
-}
-@media screen and (max-width: 1000px) {
-  nav {
-    top: 16px;
-    width: 100%;
+  #contact-form {
+    width: 90%;
   }
 }
 

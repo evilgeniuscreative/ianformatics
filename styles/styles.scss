@@ -13,7 +13,8 @@
 }
 
 @keyframes textTilt {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1.2);
   }
 
@@ -95,7 +96,7 @@ nav {
 
         &:hover {
           animation: initialScale 0.5s ease-in-out forwards,
-                     textTilt 3s ease-in-out 0.5s infinite;
+            textTilt 3s ease-in-out 0.5s infinite;
         }
       }
     }
@@ -143,6 +144,10 @@ footer {
 }
 
 @media screen and (max-width: 1000px) {
+  nav {
+    top: 16px;
+    width: 100%;
+  }
   main article {
     div {
       max-width: 95%;
@@ -151,11 +156,7 @@ footer {
     padding: 10px;
     width: auto;
   }
-}
-
-@media screen and (max-width: 1000px) {
-  nav {
-    top: 16px;
-    width: 100%;
+  #contact-form {
+    width: 90%;
   }
 }

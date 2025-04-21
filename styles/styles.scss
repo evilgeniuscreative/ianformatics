@@ -73,6 +73,19 @@ main {
   }
 }
 
+.headshot {
+  float: left;
+  margin: 0 20px 20px 0;
+  width: 170px;
+  img {
+    border-radius: 5px;
+  }
+}
+
+.title {
+  margin-bottom: 20px;
+}
+
 #contact-form {
   display: flex;
   flex-direction: column;

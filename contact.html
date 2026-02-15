@@ -1,115 +1,76 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      Ian Kleinfeld, Health Information Technologist, Data Analyst, UX/UI
-      Designer
+      Contact Ian Kleinfeld | Healthcare Systems & Informatics Leadership
     </title>
-    <link rel="stylesheet" href="https://use.typekit.net/ehs7hdf.css" />
-
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
     <link rel="stylesheet" href="styles/styles.css" />
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
-    ></script>
-    <script type="text/javascript">
-      (function () {
-        emailjs.init({
-          publicKey: "-4ilvWRZ7KKeZiJ58",
-        });
-      })();
-
-      window.onload = function () {
-        document
-          .getElementById("contact-form")
-          .addEventListener("submit", function (event) {
-            event.preventDefault();
-
-            // Show sending state
-            const button = this.querySelector("button");
-            const originalText = button.textContent;
-            button.textContent = "Sending...";
-            button.disabled = true;
-
-            emailjs.sendForm("service_d4cucsw", "template_295lo2w", this).then(
-              (response) => {
-                console.log("SUCCESS!", response);
-                alert("Message sent successfully!");
-                this.reset();
-                button.textContent = originalText;
-                button.disabled = false;
-              },
-              (error) => {
-                console.error("FAILED...", error);
-                if (error.text) {
-                  console.error("Error details:", error.text);
-                }
-                alert("Failed to send message. Please try again.");
-                console.log("EmailJS Error:", error);
-                button.textContent = originalText;
-                button.disabled = false;
-              }
-            );
-          });
-      };
-    </script>
   </head>
+
   <body>
-    <main>
-      <div class="thin-blue-line">
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <h1>Ian Kleinfeld</h1>
+          <p class="brand-sub">
+            Healthcare Systems Architect & Informatics Leadership
+          </p>
+        </div>
+
         <nav class="main-nav">
           <a href="index.html">Home</a>
           <a href="contact.html">Contact</a>
-          <a href="https://calendly.com/ianformatics" target="_blank"
-            >Schedule a Consultation</a
+          <a
+            href="https://calendly.com/ianformatics"
+            target="_blank"
+            rel="noopener"
           >
+            Schedule a Consultation
+          </a>
         </nav>
       </div>
-      <header>
-        <div class="title">
-          <img
-            src="img/ianformatics-header.jpg"
-            alt="Ian Kleinfeld, Health Information Technologist, Data Analyst, UX/UI Designer"
-          />
-        </div>
-        <!-- <div class="hero">
-          <img
-            class="hero"
-            src="img/ianformatics-hero.jpg"
-            alt="Ian Kleinfeld, Health Information Technologist, Data Analyst, UX/UI Designer"
-          />
-        </div> -->
-      </header>
+    </header>
 
-      <form id="contact-form">
-        <h1>Contact</h1>
+    <section class="section">
+      <div class="container narrow">
+        <h2>Contact</h2>
+
         <p>
-          Please use the form below to send an e-mail or call
-          <a href="tel:19193576004">919-357-6004</a> during east coast business
-          hours 9-5.
+          If you're exploring informatics leadership, workflow redesign, or
+          fractional systems support, feel free to reach out.
         </p>
-        <input type="hidden" name="contact_number" />
-        <label>Name</label>
-        <input type="text" name="from_name" required />
-        <label>Email</label>
-        <input type="email" name="from_email" required />
-        <label>Message</label>
-        <textarea name="message" rows="5" required></textarea>
-        <button type="submit">Send</button>
-      </form>
-    </main>
+
+        <p>
+          You may also call
+          <a href="tel:19193576004">919-357-6004</a>
+          during East Coast business hours.
+        </p>
+
+        <form id="contact-form">
+          <input type="hidden" name="contact_number" />
+
+          <label>Name</label>
+          <input type="text" name="from_name" required />
+
+          <label>Email</label>
+          <input type="email" name="from_email" required />
+
+          <label>Message</label>
+          <textarea name="message" rows="5" required></textarea>
+
+          <button type="submit" class="btn-primary">Send Message</button>
+        </form>
+      </div>
+    </section>
+
     <footer>
-      <div class="footer-container">
-        <nav class="footer-nav">
-          <a href="index.html">Home</a>
-          <a href="contact.html">Contact</a>
-          <a href="https://calendly.com/ianformatics" target="_blank"
-            >Schedule a Consultation</a
-          >
-        </nav>
-        <div class="footer-text">&copy; 2025 Ian Kleinfeld</div>
+      <div class="container footer-inner">
+        <p>© 2026 Ian Kleinfeld</p>
       </div>
     </footer>
   </body>
